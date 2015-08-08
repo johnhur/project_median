@@ -1,0 +1,322 @@
+// Place all the styles related to the Users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+// This code below is for the signup page
+$main-dark-blue: #394263;
+$main-gray-neutral: #e8e9fe;
+$main-turquoise: #20b6ad;
+$main-light-blue: #559adf;
+$main-purple: #53455c;
+
+@mixin rounded-corners($radius: 5px) {
+	border-radius: $radius;
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+}
+
+@mixin positioning {
+	position: relative;
+}
+
+#map-index, .body.users.index {
+	background-color: white;
+	height: 2000px;
+	margin: 0 auto;
+	text-align: center;
+	background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover; 
+}
+
+div.ui.inverted.segment {
+	background-color: $main-dark-blue;
+	text-align: justify;
+}
+
+a.active.item {
+	color: white;
+	padding-right: 10px; 
+}
+
+h1 {
+	color: white;
+}
+
+img {
+	height: 25px;
+}
+
+.ui.form {
+	padding-bottom: 1.5em;
+}
+
+p.search-field {
+	position: relative;
+	padding-top: 5px;
+}
+
+#q1 {
+	padding-bottom: 1em;
+	position: relative;
+}
+
+#q {
+	width: 200px;
+	@include rounded-corners(5px);
+	// padding-top: 1em;
+	// position: relative;
+}
+#transit, #bike, #traffic {
+	background-color: #559adf;
+	border-radius: 5px;
+	color: white;
+}
+
+.col-md-2.h5 {
+	position: relative;
+	padding-bottom: 15px;
+	padding-top: 15px;
+}
+
+.col-md-2 {
+	background-color: $main-gray-neutral;
+}
+
+#forecast, .col-md-8 {
+	display: none;
+}
+
+div.search-container {
+	background-color: white;
+	border-radius: 5px;
+	color: black;
+	right: 50px;
+	width: 60%;
+}
+
+div.column.first, .search-field {
+	text-align: justify;
+	left: 50px;
+}
+
+div.gymnoprint {
+	float: right;
+}
+
+#signup-larger {
+	background: url("skater-821502_1920.jpg") no-repeat center center fixed;
+	height: 8555px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+// .form-font {
+// 	color: white;
+// }
+
+#user_first_name {
+	position: relative;
+	left: 2px;
+	border-radius: 5px;
+  width: 200px;
+}
+
+#user_email, #user_img_url, #user_address, #user_password {
+	border-radius: 5px;
+  width: 200px;
+}
+
+.avatar-label {
+	left: 25px;
+	position: relative;
+	padding-bottom: 10px;
+	padding-top: 10px;
+}
+
+.signup-background-color {
+	background-color: $main-gray-neutral;
+	@include rounded-corners(10px);
+
+	opacity: 0.9;
+	position: relative;
+	padding: 10px 0 10px 0;
+	width: 30%;
+
+}
+
+#submit-button {
+	@include rounded-corners(10px);
+	position: relative;
+	padding-top: 20px;
+}
+
+.first {
+	position: relative;
+	padding-right: 20px;
+}
+
+// This code below is for the map index page
+
+// .search-container {
+// 	float: left;
+// 	position: relative;
+// 	top: 30px;
+// }
+
+// .search-field {
+// 	left: 15px;
+// 	position: relative;
+// 	text-align: justify;
+// }
+
+// .ui.grid {
+// 	// float: right;
+// 	position: relative;
+// 	left: 200px;
+// }
+
+.index-greeting {
+	position: relative;
+	right: 40px;
+}
+
+// This code is for the user show page
+
+body.users.show {
+	text-align: center;
+	background: url("city-restaurant-lunch-outside.jpg");
+	height: 855px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.show-profile-info {
+	background-color: $main-gray-neutral;
+	@include rounded-corners(10px);
+
+	opacity: 0.9;
+	position: relative;
+	padding: 100px 0 100px 0;
+	// height: 70%;
+	width: 40%;
+}
+
+ul {
+	list-style-type: none;
+	padding-top: 5px;
+	text-align: center;
+}
+
+li {
+	font-size: 20px;
+	padding-top: 5px;
+}
+
+.show-h1 {
+	color: $main-dark-blue;
+}
+
+ui.inverted.segment.show {
+	position: relative;
+	top: 60px;
+}
+
+// This code is for the edit page
+.edit-form {
+	text-align: center;
+}
+
+.form-group.first-name {
+	position: relative;
+	right: 15px;
+}
+
+.edit-picture-page {
+	background: url("city-restaurant-lunch-outside.jpg");
+	height: 855px;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+
+}
+
+.edit-profile-form {
+	background-color: $main-gray-neutral;
+	@include rounded-corners(10px);
+
+	opacity: 0.9;
+	position: relative;
+	padding: 10px 0 10px 0;
+	width: 30%;
+}
+
+#user_first_name {
+	left: 15px;
+	width: 200px;
+}
+
+
+// This code is for the show page
+
+.header-container {
+	float: left;
+}
+
+.ui.inverted.segment.show {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100px;
+}	
+
+
+.show-profile-info {
+	text-align: center;
+}
+
+a, .h1.show-h1 {
+	margin: 0 auto;
+	text-align: center;
+}
+
+#user-profile-info {
+	text-align: center;
+}
+
+ul {
+	padding-left: 0;
+}
+
+.logo-item {
+	float: left;
+	// position: relative;
+	width: 20px;
+}
+
+.img_preview {
+	width: 30px;
+	margin: 10px;
+}
+
+.avatar{
+	height: 150px;
+	@include rounded-corners(10px);
+}
+// .item {
+// 	padding-right: 10px;
+// }
+
+.just-background-color {
+	background-color: $main-gray-neutral;
+}
+

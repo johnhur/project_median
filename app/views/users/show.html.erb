@@ -1,0 +1,29 @@
+<body class="show-body"> 
+	
+	<div class="show-profile-info">
+		<h1 class="show-h1">Hello, <%= @current_user.first_name %>!</h1>
+
+
+		<ul id="user-profile-info">
+			<li>
+				<%= image_tag @current_user.avatar, :class => "avatar" %>
+			</li>
+			<li>
+				<%= @current_user.first_name %></li>
+			<li>
+				<%= @current_user.email %></li>
+			<li>
+				<%= @current_user.address%>
+			</li>
+
+			<li>
+				<%= link_to "Edit #{@current_user.first_name}'s Info",edit_user_path(@current_user)%><br>
+			</li>
+			<li>	
+				<%= link_to "Delete #{@current_user.first_name}"'s account', user_path(@current_user), method: :delete %><br>
+			</li>
+		</ul>
+	</div>	
+</body>	
+
+

@@ -1,0 +1,42 @@
+<div class="edit-picture-page">
+
+
+<div class="edit-profile-form">
+<h1 class="show-h1">Edit Your Profile</h1>
+
+<%= form_for(@current_user) do |f| %>
+	<%= render partial: 'users/errors', locals:{instance:@current_user} %>
+	<div class="edit-form">
+	<div class="form-group first-name">
+		<%= f.label :first_name %><br>
+		<%= f.text_field :first_name %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :email %><br>
+		<%= f.text_field :email %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :img_url %><br>
+		<%= f.text_field :img_url %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :address %><br>
+		<%= f.text_field :address %>
+	</div>
+
+	<div class="form-group">
+		<%= f.label :password %><br>	
+		<%= f.password_field :password %>
+	</div>
+<p></p>
+	<div>
+		<%= f.submit %>
+	</div>
+</div>	
+
+<% end %>	
+</div>
+</div>

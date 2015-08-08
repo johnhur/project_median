@@ -1,0 +1,82 @@
+<div id="signup-larger" class="get-location">
+	<div class="signup-background-color">
+		<h1>
+			<div class="median-logo">
+				<%= image_tag("median-logo1.png") %>
+			</div>
+		</h1>
+
+		<h3>Signup</h3>
+
+		<%= form_for @user, :html => { :multipart => true }  do |f| %>
+		<%= render partial: 'users/errors', locals:{instance:@user} %>
+	
+			<div class="form-group first-label">
+				<div class="label">
+					<div class="form-font">
+						<%= f.label :first_name %><br>
+					</div>
+				</div>
+					<%= f.text_field :first_name %>
+			</div>
+
+			<div class="form-group">
+				<div class="label"></div>	
+					<%= f.label :email %><br>
+					<%= f.text_field :email %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :img_url %><br>
+				<%= f.text_field :img_url %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :address %><br>
+				<%= f.text_field :address %>
+			</div>
+
+			<div class="form-group">
+				<%= f.label :password %><br>
+				<%= f.password_field :password %>
+			</div>
+
+			<div class="avatar-label">
+				<%= f.file_field :avatar %>
+			</div>
+			<%= f.hidden_field :lat %>
+			<%= f.hidden_field :lng %>
+			<div class="submit-button">
+				<%= f.submit %>
+			</div>
+			
+			<div class="signup-link">
+          <%= link_to "Have an existing account? Login here", login_path %>
+      </div>
+
+	</div>
+
+	<div class="ui inverted segment footer">
+      <div class="ui inverted secondary menu">
+      	<a class="active item">
+					<%= image_tag("median-logo4.png") %>
+				 </a>
+				<a class="active item image">
+					<%= image_tag("median-icon2.png") %>
+				</a>
+      	 <a class="active item">
+           Home
+         </a>
+         <a class="active item">
+           About
+         </a> 
+         <a class="active item">
+           Contact
+         </a>  
+       </div>
+     </div> 
+
+
+</div>	
+	<% end %>
+

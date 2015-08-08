@@ -1,0 +1,66 @@
+
+<div id="map-index">
+
+<!-- The class="index" in the h1 tag below is needed (the users.js file is looking for it); please don't remove it -->
+<h3 class="index"></h3>
+<!-- steps for user to follow.. -->
+
+<div class="ui steps">
+  <div id="step1" class="active step">
+    <i class="user icon"></i>
+    <div class="content">
+      <div class="title">1. Friends</div>
+      <div class="description">Click "Online Users" & Choose</div>
+    </div>
+  </div>
+  <div id="step2" class="disabled step">
+    <i class="find icon"></i>
+    <div class="content">
+      <div class="title">2. Search</div>
+      <div class="description">Category (ex. Coffee, Sandwiches, Bar) & click Search </div>
+    </div>
+  </div>
+  <div id="step3" class="disabled step">
+    <i class="idea icon"></i>
+    <div class="content">
+      <div class="title">3. Select</div>
+      <div class="description">Click on a Dark Blue Marker for the Yelp Review!</div>
+    </div>
+  </div>
+</div>
+
+<div class="ui container" id='map'></div>
+
+<div class="ui container">
+		<div class="ui two column centered grid">
+			<div class="column first">
+			  <div class ="search-container ui form">
+			    <%= form_tag("/search", method: "get", :class => 'ui form') do %>
+			      <%= text_field_tag(:q, nil, class:"user_term", autofocus: true, placeholder: "Search for a Category Here!") %>
+			      <p><%= submit_tag("Search", class:"ui teal button") %></p>
+			    <% end %>
+			  </div>
+		  </div>
+		</div>
+
+		<div class="ui grid">
+			<div class="three column row">
+			<!-- need both friends and show IDs; please don't remove -->
+				<div class="two wide column"><button class="ui teal button" id="friends">Online Users</button></div>
+				<div class="two wide column" id="show"></div>
+				<!-- <div class="twelve wide column"><div id='map'></div></div> -->
+				<div class="two wide column"></div>
+			</div>
+		</div>
+		</div>
+
+
+</div>
+<!-- <div class="ui grid">
+	<div id='map' class="eight column row"></div>
+</div> -->
+
+
+
+
+

@@ -1,0 +1,68 @@
+<div id="larger" class="get-location">    
+<!-- <div id="desktop-container"> -->
+  <!-- <div class="login-container"> -->
+    <div class="login-background-color">
+      
+      <h1>
+        <div class="median-logo">
+          <%= image_tag("median-logo1.png") %>
+        </div>
+      </h1> 
+
+      <h3>Login</h3>
+      <!-- begin login form -->
+      <%= form_tag login_path do %>
+        <div class="form-group">   
+          <div class="label">
+            <%= label_tag :email, nil, class:"control-label" %>
+          </div>
+          
+          <%= text_field_tag :email, params[:email], autofocus: true, class:"form-control" %>
+      
+        <div class="form-group">
+          <div class="label":><%= label_tag :password, nil, class:"control-label" %></div>
+            <%= password_field_tag :password, params[:password], class:"form-control" %>
+        </div>
+        
+        <p>
+        <%= hidden_field_tag 'user_lat' %>
+        <%= hidden_field_tag 'user_lng' %>
+        <%= submit_tag "Log in", id:"submit-user" %>
+        </p>
+
+
+        <div class="signup-link">
+          <%= link_to "Don't have an account? Sign up here", new_user_path %>
+        </div>
+        <div class="signup-link">
+          <%= link_to "Forgot Password?", new_reset_path %>
+        </div>
+        <% end %>
+        <!-- end login form -->
+
+    </div>
+  </div>
+     
+
+<!-- <script>
+  
+  var images = ["/assets/restaurant-690569_1280.jpg", "https://static.pexels.com/photos/5938/food-salad-healthy-lunch.jpg", "/assets/restaurant-690569_1280.jpg"];
+
+  var randomNum = Math.floor(Math.random() * images.length); 
+  console.log(randomNum);
+
+  var randomImage = images[randomNum];
+
+$("#larger").css("background", "url(" + randomImage + ")");
+
+console.log(randomImage);
+
+</script> 
+-->
+
+
+<!--  hidden field with latitude and longitude. sent when user hits submit..
+  - type: hidden, for input element.. 
+
+ when user hits button, calculate lat and lng, prevent default action of button.. 
+  - send  -->
