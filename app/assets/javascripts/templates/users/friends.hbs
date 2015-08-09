@@ -1,19 +1,15 @@
-
-
 <div class="ui middle aligned divided list">
 {{#each this}} 
   <div class="item">
     <div class="right floated content">
-    <button class="mini ui button meet" data-lat="{{lat}}" data-lng="{{lng}}">Meet!
+    <div class="mini ui button meet" data-lat="{{lat}}" data-lng="{{lng}}">Meet!</div>
     </div>
+    </div>
+    <i class="user icon"></i>
     <div class="content">
-      {{first_name}}
+    {{first_name}}
     </div>
-      <input type="hidden" name="lat" value="{{lat}}" />
-      <input type="hidden" name="lng" value="{{lng}}" />
-      </button>
-      {{/each}}
+   {{/each}}
   </div>
-  </div>
-</div>
+ </div>
 
