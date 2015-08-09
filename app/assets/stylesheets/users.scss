@@ -23,7 +23,7 @@ $main-purple: #53455c;
 
 #map-index, .body.users.index {
 	background-color: white;
-	height: 2000px;
+	height: 1000px;
 	margin: 0 auto;
 	text-align: center;
 	background-size: cover;
@@ -70,11 +70,11 @@ p.search-field {
 	// padding-top: 1em;
 	// position: relative;
 }
-#transit, #bike, #traffic {
-	background-color: #559adf;
-	border-radius: 5px;
-	color: white;
-}
+// #transit, #bike, #traffic {
+// 	background-color: #559adf;
+// 	border-radius: 5px;
+// 	color: white;
+// }
 
 .col-md-2.h5 {
 	position: relative;
@@ -82,9 +82,9 @@ p.search-field {
 	padding-top: 15px;
 }
 
-.col-md-2 {
-	background-color: $main-gray-neutral;
-}
+// .col-md-2 {
+// 	border-style: thin;
+// }
 
 #forecast, .col-md-8 {
 	display: none;

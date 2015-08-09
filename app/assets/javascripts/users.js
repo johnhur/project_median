@@ -291,11 +291,8 @@ $(function() {
       icon: 'person.png'
     });
 
-    var mapOptions = {
-      zoom: 12,
-      center: new google.maps.LatLng(midLat, midLng),
-      mapTypeId: google.maps.MapTypeId.TERRAIN
-    };
+    center = mid_marker.getPosition();
+    map.setCenter(center);
   }
 
     // -------------------CALCULATE ROUTE FROM USER TO PLACE-----------------
