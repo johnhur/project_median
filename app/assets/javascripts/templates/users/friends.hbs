@@ -1,10 +1,9 @@
-<div class="ui middle aligned divided list">
+<div class="ui left aligned divided list">
 {{#each this}} 
   <div class="item">
-    <div class="right floated content">
-    <div class="ui button meet" data-lat="{{lat}}" data-lng="{{lng}}">Meet!</div>
+    <div class="left floated content">
+    <div class="ui button meet" data-lat="{{lat}}" data-lng="{{lng}}"><i class="user icon"></i>{{first_name}}</div>
     </div>
-    <div class="content"><i class="user icon"></i>{{first_name}}</div>
     </div>
    {{/each}}
   </div>

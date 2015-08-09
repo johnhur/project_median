@@ -175,13 +175,6 @@ $(function() {
             $('#show').children().remove() // removes previous list of logged in users. 
             $('#show').append(html);
 
-            $("#step1").removeClass("active step")
-            $("#step1").addClass("step")
-
-            $("#step2").removeClass("disabled step")
-            $("#step2").addClass("active step")
-
-
         });
       });
 
@@ -248,6 +241,13 @@ $(function() {
 // Since class is added dynamically, need to use event delegation to register event handler
   $(document).on('click', ".meet", function(e) {
     e.preventDefault();
+
+    $("#step1").removeClass("active step")
+    $("#step1").addClass("step")
+
+    $("#step2").removeClass("disabled step")
+    $("#step2").addClass("active step")
+
 
     // var chosenLat = $('input:hidden[name=lat]').val();
     // var chosenLng = $('input:hidden[name=lng]').val();

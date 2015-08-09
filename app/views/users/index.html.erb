@@ -21,7 +21,7 @@
     <i class="idea icon"></i>
     <div class="content">
       <div class="title">3. Select</div>
-      <div class="description">Click on a Dark Blue Marker for the Yelp Review!</div>
+      <div class="description">Click a Dark Blue Marker for the Yelp Review & Directions!</div>
     </div>
   </div>
 </div>
@@ -29,23 +29,17 @@
 <div id='map'>
 </div>
 
-<div class="ui container">
-		<div class="ui two column centered grid">
-			<div class="column first">
-			  <div class ="search-container ui form">
-			    <%= form_tag("/search", method: "get", :class => 'ui form') do %>
-			      <%= text_field_tag(:q, nil, class:"user_term", autofocus: true, placeholder: "Search for a Category Here!") %>
-			      <p><%= submit_tag("Search", class:"ui teal button") %></p>
-			    <% end %>
-			  </div>
-		  </div>
-		</div>
-
 <div class="ui equal width center aligned padded grid">
 			<div class="row">
 			<!-- need both friends and show IDs; please don't remove -->
-				<div class="white column"><button class="ui teal button" id="friends">Online Users</button></div>
+				<div class="white column"><button class="ui large teal button" id="friends">Online Users</button></div>
 				<div class="white column" id="show"></div>
+				<div class ="white column search-container ui form">
+			    <%= form_tag("/search", method: "get", :class => 'ui form') do %>
+			      <%= text_field_tag(:q, nil, class:"user_term", placeholder: "Enter Category") %>
+			      <%= submit_tag("Search", class:"ui teal button") %>
+			    <% end %>
+			  </div>
 				<!-- <div class="twelve wide column"><div id='map'></div></div> -->
 				<!-- <div class="two wide column"></div> -->
 			</div>
