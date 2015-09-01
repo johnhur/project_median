@@ -46,7 +46,6 @@ class UsersController < ApplicationController
     flash[:notice] = "#{@current_user.first_name} has been deleted!"
     redirect_to login_path
     
-
   end
 
 

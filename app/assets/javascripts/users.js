@@ -206,6 +206,7 @@ $(function() {
         method: 'get',
         dataType: 'json'
       }).done(function(data) {
+        console.log(data);
         data['businesses'].forEach(function(business) {
           var placeName = business.name;
           var placeRating = business.rating_img_url_small;

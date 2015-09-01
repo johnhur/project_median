@@ -13,9 +13,10 @@ class PlacesController < ApplicationController
     coordinates = { latitude: @lat, longitude: @long }
     new_search = Yelp.client.search_by_coordinates(coordinates, yelp_params)
     # TODO - refactor into a separate function
+    p new_search
     new_search.businesses.each do |business|
     	  result_name = business.name
-          result_distance = business.distance
+        result_distance = business.distance
     	  result_address = business.location.address
     	  result_lat = business.location.coordinate.latitude
     	  result_long = business.location.coordinate.longitude
