@@ -9,7 +9,7 @@ class PlacesController < ApplicationController
     @lat = params[:lat]
     @long = params[:lng]
     term = params[:term]
-    yelp_params = { term: term, limit: 5, offset: 5, sort: 1}
+    yelp_params = { term: term, limit: 5, sort: 1}
     coordinates = { latitude: @lat, longitude: @long }
     new_search = Yelp.client.search_by_coordinates(coordinates, yelp_params)
     # TODO - refactor into a separate function
@@ -24,27 +24,5 @@ class PlacesController < ApplicationController
     	  # result_rating = business.rating
         end 
     render json: new_search
-    
   end
-
-  # private
-  #   def client
-  #      @client ||= Yelp::Client.new({ consumer_key: ENV['YELP_CONSUMER_KEY'],
-  #       consumer_secret: ENV['YELP_CONSUMER_SECRET'],
-  #       token: ENV['YELP_TOKEN_SECRET'],
-  #       token_secret: ENV['YELP_TOKEN']
-  #     })
-    # end
-    private
-      def client
-         @client ||= Yelp::Client.new({ consumer_key: ENV['config.consumer_key'],
-          consumer_secret: ENV['config.consumer_secret'],
-          token: ENV['config.token'],
-          token_secret: ENV['config.token_secret']
-        })
-      end
-
 end
-
-
-    #term2 = params.require(:user).permit(:business_name)

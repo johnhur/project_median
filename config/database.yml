@@ -81,5 +81,3 @@ test:
 production:
   <<: *default
   database: hangout_production
-  username: hangout
-  password: <%= ENV['HANGOUT_DATABASE_PASSWORD'] %>
