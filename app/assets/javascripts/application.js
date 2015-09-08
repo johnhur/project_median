@@ -12,6 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require angular
+//= require angular-animate
+//= require angular-resource
 //= require handlebars.runtime
 //= require_tree ./templates
 //= require_tree .

@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :null_session
 
   def confirm_logged_in
      unless session[:user_id]
@@ -30,5 +30,12 @@ class ApplicationController < ActionController::Base
 
    helper_method :current_user, :logged_in? #make it available in views (it will be available in all controllers as well because they inherit from `ApplicationController`)
   
+  protected
+      def html_layout
+        # check the request format
+        if request.format.symbol == :html
+          render "layouts/application"
+        end
+      end
 end
 
