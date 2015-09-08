@@ -40,7 +40,6 @@ $(function() {
       navigator.geolocation.getCurrentPosition(function(loc){
         userLat = loc.coords.latitude;
         userLong = loc.coords.longitude;
-        console.log(userLat + "," + userLong)
 
         //onclick conditional to check if lat and long are populated.. for users
 
@@ -155,7 +154,6 @@ $(function() {
           method: 'get',
           dataType: 'json'
         }).done(function(data) {
-          console.log(data)
           data.forEach(function(friend) {
             var friendName = friend.first_name;
             var friendLat = friend.lat;
@@ -206,7 +204,6 @@ $(function() {
         method: 'get',
         dataType: 'json'
       }).done(function(data) {
-        console.log(data);
         data['businesses'].forEach(function(business) {
           var placeName = business.name;
           var placeRating = business.rating_img_url_small;
@@ -270,7 +267,6 @@ $(function() {
            });  
 
 
-    console.log("friend location: "+ chosenLat + ", " + chosenLng)
     getMidpoint(chosenLat, chosenLng);
   });
 
@@ -283,7 +279,6 @@ $(function() {
     mid = google.maps.geometry.spherical.interpolate(userLatLong, friend, 0.5)
     midLat = mid.A
     midLng = mid.F
-    console.log(mid)
       // lat is stored as A, lng is stored as F
       // console.log(mid.A)
 
