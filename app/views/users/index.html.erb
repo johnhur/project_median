@@ -2,52 +2,61 @@
 <h3 class="index"></h3>
 <!-- steps for user to follow.. -->
 
+
 <div class="ui steps">
   <div id="step1" class="active step">
     <i class="user icon"></i>
     <div class="content">
       <div class="title">1. Friends</div>
-      <div class="description">Click "Online Users" & Choose</div>
+      <div class="description">Choose Friend to Meet Below</div>
     </div>
   </div>
   <div id="step2" class="disabled step">
     <i class="find icon"></i>
     <div class="content">
       <div class="title">2. Search</div>
-      <div class="description">Category (ex. Coffee, Sandwiches, Bar) & click Search </div>
+      <div class="description">Input a Category (ex. Coffee, Sandwiches, Bar) & click Search </div>
     </div>
   </div>
   <div id="step3" class="disabled step">
     <i class="idea icon"></i>
     <div class="content">
       <div class="title">3. Select</div>
-      <div class="description">Click a Dark Blue Marker for the Yelp Review & Directions!</div>
+      <div class="description">Click a Dark Blue Marker for Yelp Reviews & Directions!</div>
     </div>
   </div>
 </div>
 
+
+
 <div id='map'>
 </div>
 
-<div class="ui equal width center aligned padded grid">
-			<div class="row">
-			<!-- need both friends and show IDs; please don't remove -->
-				<div class="white column"><button class="ui large teal button" id="friends">Online Users</button></div>
-				<div class="white column" id="show"></div>
-				<div class ="white column search-container ui form">
-			    <%= form_tag("/search", method: "get", :class => 'ui form') do %>
-			      <%= text_field_tag(:q, nil, class:"user_term", placeholder: "Enter Category") %>
-			      <%= submit_tag("Search", class:"ui teal button") %>
-			    <% end %>
-			  </div>
-				<!-- <div class="twelve wide column"><div id='map'></div></div> -->
-				<!-- <div class="two wide column"></div> -->
-			</div>
-		</div>
-		</div>
+
+<div ng-app="projectMedian" ng-controller="TestController">
+  <div class="ui left aligned divided list container" style="">
+  <span style="">{[{friends.length}]} Online Users</span>
+    <div class="item" ng-repeat="f in friends">
+      <div class="left floated content">
+      <div class="ui button meet" data-lat="{[{f.lat}]}" data-lng="{[{f.lng}]}" data-fn"{[{f.first_name}]}"><i class="user icon"></i>{[{f.first_name}]}</div>
+      </div>
+      </div>
+    </div>
+   </div>
+  </div>
+</div>
 
 <div id="map-index">
+<div class ="search-container ui form">
+  <%= form_tag("/search", method: "get", :class => 'ui form') do %>
+    <%= text_field_tag(:q, nil, class:"user_term", placeholder: "Enter Category") %>
+    <%= submit_tag("Search", class:"ui teal button") %>
+  <% end %>
 </div>
+</div>
+
+
+
 
 
 

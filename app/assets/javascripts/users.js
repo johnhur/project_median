@@ -249,8 +249,7 @@ $(function() {
     $("#step2").removeClass("disabled step")
     $("#step2").addClass("active step")
 
-
-    // var chosenLat = $('input:hidden[name=lat]').val();
+       // var chosenLat = $('input:hidden[name=lat]').val();
     // var chosenLng = $('input:hidden[name=lng]').val();
 
     // PROBLEM: even when we click on a different user's meet button, jquery always chooses the first user's hidden input values..
@@ -259,6 +258,17 @@ $(function() {
 
     var chosenLat = $(this).attr('data-lat');
     var chosenLng = $(this).attr('data-lng');
+    var friendName = $(this).attr('data-fn');
+    var thisLatLong = new google.maps.LatLng(chosenLat, chosenLng);
+
+           var marker = new google.maps.Marker({
+             animation: google.maps.Animation.DROP,
+             position: thisLatLong,
+             map: map,
+             title: friendName,
+             icon: 'person.png'
+           });  
+
 
     console.log("friend location: "+ chosenLat + ", " + chosenLng)
     getMidpoint(chosenLat, chosenLng);

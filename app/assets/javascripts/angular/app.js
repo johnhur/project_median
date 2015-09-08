@@ -1,4 +1,4 @@
-var medianApp = angular.module("projectMedian", ['ngRoute']);
+var medianApp = angular.module("projectMedian", ['ngRoute', 'ngResource']);
 
 
 medianApp.config(['$httpProvider', '$interpolateProvider', function($httpProvider, $interpolateProvider) {

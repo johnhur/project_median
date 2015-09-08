@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
-  root to: 'statics#index'
-  # root 'sessions#login'
+  # root to: 'statics#index'
+  root 'sessions#login'
   get '/login', to: "sessions#login", as: 'login'
   post '/login', to: "sessions#attempt_login"
   delete '/logout', to: "sessions#logout", as: "logout"
