@@ -128,53 +128,55 @@ $(function() {
       getWeather(weather);
     }
 
+    // **** weather underground api key needed *****
     // ----------------------------- WEATHER LAYER OBJECT -----------------------------
-    function getWeather(weather) {
-      $.ajax({
-        url: weather,
-        jsonp: "callback",
-        dataType: "jsonp"
-      }).done(function(data) {
-        //setting the spans to the correct parameters
-        $('#location').html(data['location']['city']);
-        $('#temp').html(data['current_observation']['temp_f']);
-        $('#desc').html(data['current_observation']['weather']);
-        $('#wind').html(data['current_observation']['wind_string']);
-        //filling the image src attribute with the image url
-        $('#img').attr('src', data['current_observation']['icon_url']);
-      });
-    }
+    // function getWeather(weather) {
+    //   $.ajax({
+    //     url: weather,
+    //     jsonp: "callback",
+    //     dataType: "jsonp"
+    //   }).done(function(data) {
+    //     //setting the spans to the correct parameters
+    //     $('#location').html(data['location']['city']);
+    //     $('#temp').html(data['current_observation']['temp_f']);
+    //     $('#desc').html(data['current_observation']['weather']);
+    //     $('#wind').html(data['current_observation']['wind_string']);
+    //     //filling the image src attribute with the image url
+    //     $('#img').attr('src', data['current_observation']['icon_url']);
+    //   });
+    // }
 
+    // ******* REFACTORED WITH ANGULAR **********
     // ---------------------------- FIND LOGGED IN USERS --------------------------
-    $("#friends").click(function(e) {
-        e.preventDefault();
-        $.ajax({
-          // url looks for 'friends' action (see routes.rb)
-          url: '/friends',
-          method: 'get',
-          dataType: 'json'
-        }).done(function(data) {
-          data.forEach(function(friend) {
-            var friendName = friend.first_name;
-            var friendLat = friend.lat;
-            var friendLng = friend.lng;
-            var thisLatLong = new google.maps.LatLng(friendLat, friendLng);
-            var marker = new google.maps.Marker({
-              animation: google.maps.Animation.DROP,
-              position: thisLatLong,
-              map: map,
-              title: friendName,
-              icon: 'person.png'
-            });
-          });
-          var html = HandlebarsTemplates['users/friends'](data);
-            // Use an ID to ensure only one, we don't want an array
+    // $("#friends").click(function(e) {
+    //     e.preventDefault();
+    //     $.ajax({
+    //       // url looks for 'friends' action (see routes.rb)
+    //       url: '/friends',
+    //       method: 'get',
+    //       dataType: 'json'
+    //     }).done(function(data) {
+    //       data.forEach(function(friend) {
+    //         var friendName = friend.first_name;
+    //         var friendLat = friend.lat;
+    //         var friendLng = friend.lng;
+    //         var thisLatLong = new google.maps.LatLng(friendLat, friendLng);
+    //         var marker = new google.maps.Marker({
+    //           animation: google.maps.Animation.DROP,
+    //           position: thisLatLong,
+    //           map: map,
+    //           title: friendName,
+    //           icon: 'person.png'
+    //         });
+    //       });
+    //       var html = HandlebarsTemplates['users/friends'](data);
+    //         // Use an ID to ensure only one, we don't want an array
 
-            $('#show').children().remove() // removes previous list of logged in users. 
-            $('#show').append(html);
+    //         $('#show').children().remove() // removes previous list of logged in users. 
+    //         $('#show').append(html);
 
-        });
-      });
+    //     });
+    //   });
 
     // ----------------------------- SEARCH YELP -----------------------------
     // click search & call searchYelp function with geolocation global variables

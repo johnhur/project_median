@@ -7,3 +7,4 @@ medianApp.config(['$httpProvider', '$interpolateProvider', function($httpProvide
   $httpProvider.defaults.headers.common['X-CSRF-Token'] =
     $('meta[name=csrf-token]').attr('content');
 }]);
+ 
