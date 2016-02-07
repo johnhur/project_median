@@ -9,3 +9,6 @@ Project URL: https://still-sierra-3264.herokuapp.com
 Google Maps API & Yelp API
 
 - Project built with HTML & CSS, AngularJS, & Ruby on Rails. 
+
+not able to do yelp search with midpoint because of the autoticker that refreshes page and variables..
+

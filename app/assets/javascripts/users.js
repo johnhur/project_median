@@ -95,6 +95,8 @@ $(function() {
     }
 
   function getLoc(location) {
+
+    console.log("HELLLOO")
     // variables declared globally, see top of script
     userLat = location.coords.latitude;
     userLong = location.coords.longitude;
@@ -106,8 +108,8 @@ $(function() {
       icon: 'person.png'
     });
 
-    weather = 'https://api.wunderground.com/api/0fd9bd78fc2f4356/geolookup/conditions/q/' + userLat + ',' + userLong + '.json';
-    getWeather(weather);
+    // weather = 'https://api.wunderground.com/api/0fd9bd78fc2f4356/geolookup/conditions/q/' + userLat + ',' + userLong + '.json';
+    // getWeather(weather);
 
     //we need to have a callback for the getMidpoint function here because we want to
     // ensure that the userLatLong is passed into the getMidpoint function.
@@ -185,6 +187,7 @@ $(function() {
       e.preventDefault();
       // getting the category the user filled in on the form
       // on the user index page
+      console.log(midLat + ", " + midLng);
       userTerm = $(".user_term").val();
       // searchYelp(userLat, userLong, userTerm);
       searchYelp(midLat, midLng, userTerm);
@@ -274,15 +277,18 @@ $(function() {
 
   function getMidpoint(lat, lng) {
     // **** condition in which users' locations are the same *****
-    //example for midpoint
+    //example for midpoint 
 
     friend = new google.maps.LatLng(lat, lng);
     // console.log(marker.position)
-    mid = google.maps.geometry.spherical.interpolate(userLatLong, friend, 0.5)
-    midLat = mid.A
-    midLng = mid.F
+    console.log("this is userLatLong" + userLatLong)
+    console.log("this is friend: " + friend)
+    mid = google.maps.geometry.spherical.interpolate(userLatLong, friend, 0.5) // ******* issue is here ********
+    console.log(mid);
+    midLat = mid.G
+    midLng = mid.K
       // lat is stored as A, lng is stored as F
-      // console.log(mid.A)
+ 
 
     // marker2 = new google.maps.Marker({
     //   position: friend,

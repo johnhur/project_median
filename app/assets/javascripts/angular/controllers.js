@@ -4,7 +4,7 @@ medianApp.controller("TestController", ['$scope','$resource','Friend', '$timeout
   var getAllFriends = function() {
   		Friend.query(function(model){
   			$scope.friends = model;
-  			$timeout(getAllFriends, 1000)
+  			// $timeout(getAllFriends, 1000)
   		}) 
   }
   getAllFriends();

@@ -6,6 +6,7 @@ class PlacesController < ApplicationController
   # search is on same page as results, so only need one method
   def results
     # lat, lng, and term from user.js AJAX get request
+    p params
     @lat = params[:lat]
     @long = params[:lng]
     term = params[:term]
